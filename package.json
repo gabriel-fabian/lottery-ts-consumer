@@ -4,6 +4,7 @@
   "description": "A simple React app for lottery results crawling",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack server --open --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
