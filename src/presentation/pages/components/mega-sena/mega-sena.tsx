@@ -12,7 +12,7 @@ const MegaSena: React.FC = () => {
       <LotteryInfo lotteryDate='05/04/2023' lotteryPrize='R$ 37.000.000,00' />
       <LotteryResult
         winners={0}
-        drawnNumbers={[5, 10, 26, 35, 38, 44]}
+        drawnNumbers={['5', '10', '26', '35', '38', '44']}
         contestNumber={2579}
         contestDate='Sábado, 01 de Abril de 2023'
       />

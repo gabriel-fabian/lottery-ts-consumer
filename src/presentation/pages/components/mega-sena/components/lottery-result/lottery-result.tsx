@@ -3,7 +3,7 @@ import Styles from './lottery-result-styles.scss'
 import React from 'react'
 
 type Props = {
-  drawnNumbers: number[]
+  drawnNumbers: string[]
   winners: number
   contestNumber: number
   contestDate: string
