@@ -38,7 +38,7 @@ export class LotteryApi {
       nextLotteryDateFull: data.dataPorExtenso,
       winners: data.quantidadeGanhadores,
       contestNumber: data.numeroDoConcurso,
-      nextLotteryPrize: data.valorEstimadoProximoConcurso.toString()
+      nextLotteryPrize: data.valorEstimadoProximoConcurso
     }
   }
 
@@ -49,7 +49,7 @@ export class LotteryApi {
       nextLotteryDateFull: data.dataPorExtenso,
       winners: data.quantidadeGanhadores,
       contestNumber: data.numeroDoConcurso,
-      nextLotteryPrize: data.valorEstimadoProximoConcurso.toString()
+      nextLotteryPrize: data.valorEstimadoProximoConcurso
     }
   }
 }

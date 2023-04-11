@@ -9,7 +9,7 @@ type Props = {
   data: {
     drawnNumbers: string[]
     nextLotteryDate: string
-    nextLotteryPrize: string
+    nextLotteryPrize: number
     winners: number
     contestNumber: number
     nextLotteryDateFull: string

@@ -4,10 +4,14 @@ import React from 'react'
 
 type Props = {
   lotteryDate: string
-  lotteryPrize: string
+  lotteryPrize: number
 }
 
 const LotteryInfo: React.FC<Props> = ({ lotteryDate, lotteryPrize }: Props) => {
+  const formatPrize = (prize: number): string => {
+    return lotteryPrize.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+  }
+
   return (
     <div className={Styles.lotteryInfo}>
       <div className={Styles.lotteryName}>
@@ -19,7 +23,7 @@ const LotteryInfo: React.FC<Props> = ({ lotteryDate, lotteryPrize }: Props) => {
         </span>
       </div>
       <div className={Styles.lotteryPrize}>
-        <span>{lotteryPrize}</span>
+        <span>{formatPrize(lotteryPrize)}</span>
       </div>
     </div>
   )
