@@ -5,32 +5,27 @@ import Styles from './loto-facil-styles.scss'
 
 import React from 'react'
 
-const LotoFacil: React.FC = () => {
+type Props = {
+  data: {
+    drawnNumbers: string[]
+    nextLotteryDate: string
+    nextLotteryPrize: string
+    winners: number
+    contestNumber: number
+    nextLotteryDateFull: string
+  }
+}
+
+const LotoFacil: React.FC<Props> = ({ data }: Props) => {
   return (
     <div className={Styles.contentWrap}>
       <LotoFacilLogo />
-      <LotteryInfo lotteryDate='03/04/2023' lotteryPrize='R$ 1.500.000,00' />
+      <LotteryInfo lotteryDate={data.nextLotteryDate} lotteryPrize={data.nextLotteryPrize} />
       <LotteryResult
-        drawnNumbers={[
-          '01',
-          '04',
-          '05',
-          '06',
-          '09',
-          '10',
-          '11',
-          '12',
-          '13',
-          '15',
-          '18',
-          '19',
-          '20',
-          '22',
-          '25'
-        ]}
-        winners={7}
-        contestDate='Sábado, 01 de Abril de 2023'
-        contestNumber={2778}
+        drawnNumbers={data.drawnNumbers}
+        winners={data.winners}
+        contestDate={data.nextLotteryDateFull}
+        contestNumber={data.contestNumber}
       />
     </div>
   )

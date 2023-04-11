@@ -5,16 +5,27 @@ import Styles from './mega-sena-styles.scss'
 
 import React from 'react'
 
-const MegaSena: React.FC = () => {
+type Props = {
+  data: {
+    drawnNumbers: string[]
+    nextLotteryDate: string
+    nextLotteryPrize: string
+    winners: number
+    contestNumber: number
+    nextLotteryDateFull: string
+  }
+}
+
+const MegaSena: React.FC<Props> = ({ data }: Props) => {
   return (
     <div className={Styles.contentWrap}>
       <MegaSenaLogo />
-      <LotteryInfo lotteryDate='05/04/2023' lotteryPrize='R$ 37.000.000,00' />
+      <LotteryInfo lotteryDate={data.nextLotteryDate} lotteryPrize={data.nextLotteryPrize} />
       <LotteryResult
-        winners={0}
-        drawnNumbers={['5', '10', '26', '35', '38', '44']}
-        contestNumber={2579}
-        contestDate='Sábado, 01 de Abril de 2023'
+        winners={data.winners}
+        drawnNumbers={data.drawnNumbers}
+        contestNumber={data.contestNumber}
+        contestDate={data.nextLotteryDateFull}
       />
     </div>
   )
