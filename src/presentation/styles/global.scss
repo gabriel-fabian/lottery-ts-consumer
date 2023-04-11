@@ -1,0 +1,22 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  padding-top: 3px;
+  padding-left: 3px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+hr {
+  width: 110%;
+  height: 0.01px;
+  border-top-style: solid;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  color: lightgray;
+  display: block;
+  border-color: lightgray;
+}
