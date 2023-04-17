@@ -29,9 +29,9 @@ const Lottery: React.FC<Props> = ({ lotteryApi }: Props) => {
     <div className={Styles.contentWrap}>
       {isLoading && <Loading />}
       {state.megasena && <MegaSena data={state.megasena}/>}
-      <hr />
+      {state.megasena && <hr />}
       {state.lotofacil && <LotoFacil data={state.lotofacil}/>}
-      <hr />
+      {state.lotofacil && <hr />}
     </div>
   )
 }
