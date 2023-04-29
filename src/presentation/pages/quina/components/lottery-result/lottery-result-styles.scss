@@ -1,0 +1,37 @@
+.lotteryResult {
+  display: flex;
+  flex-direction: column;
+}
+
+.lotteryResultList {
+  display: flex;
+  padding-left: 0px;
+  margin-top: 0px;
+}
+
+.lotteryResultNumber {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  background: #250181;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+.lotteryResultWinner {
+  font-size: 26px;
+  font-weight: bold;
+  color: #0066b3;
+  margin-right: 16px;
+  text-transform: uppercase;
+}
+
+.lotteryResultInfo {
+  color: #4c556c;
+  margin-top: 32px;
+  font-size: 16px;
+}

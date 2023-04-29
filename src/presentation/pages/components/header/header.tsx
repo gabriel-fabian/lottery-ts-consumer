@@ -30,6 +30,14 @@ const Header: React.FC<Props> = ({ currentRoute }) => {
       >
         Megasena
       </NavLink>
+      <NavLink
+        to='/quina'
+        className={`${Styles.quinaLink} ${
+          isLinkDisabled('/quina') ? Styles.disabledLink : ''
+        }`}
+      >
+        Quina
+      </NavLink>
     </div>
   )
 }

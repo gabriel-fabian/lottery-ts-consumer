@@ -1,2 +1,2 @@
 export * from './megasena-factory'
-export * from './lotofacil-factory.tsx'
+export * from './lotofacil-factory'

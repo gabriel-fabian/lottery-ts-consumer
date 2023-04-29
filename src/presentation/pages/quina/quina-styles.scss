@@ -1,0 +1,9 @@
+.megaSenaWrap {
+  display: flex;
+  flex-direction: column;
+
+  .contentWrap {
+    display: flex;
+    flex-direction: row;
+  }
+}
