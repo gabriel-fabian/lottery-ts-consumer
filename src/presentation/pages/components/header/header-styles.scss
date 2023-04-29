@@ -1,0 +1,23 @@
+.headerWrap {
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+
+  .megasenaLink {
+    color: #209869;
+    margin-left: 16px;
+    text-decoration: none;
+  }
+
+  .lotofacilLink {
+    color: #930089;
+    margin-left: 16px;
+    text-decoration: none;
+  }
+
+  .disabledLink {
+    pointer-events: none;
+    color: #aaa;
+  }
+}

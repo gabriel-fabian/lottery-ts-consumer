@@ -7,6 +7,7 @@ import { type LotoFacilApi } from '../../../infra/gateways/lotofacil-api'
 import { type LotteryResultModel } from '../../../domain/entities'
 
 import React, { useEffect, useState } from 'react'
+import Header from '../components/header/header'
 
 type Props = {
   lotoFacilApi: LotoFacilApi
@@ -32,14 +33,17 @@ const LotoFacil: React.FC<Props> = ({ lotoFacilApi }: Props) => {
       {isLoading && <Loading />}
       {!isLoading && (
         <>
-          <LotoFacilLogo />
-          <LotteryInfo lotteryDate={state.nextLotteryDate} lotteryPrize={state.nextLotteryPrize} />
-          <LotteryResult
-            winners={state.winners}
-            drawnNumbers={state.drawnNumbers}
-            contestNumber={state.contestNumber}
-            contestDate={state.nextLotteryDateFull}
-          />
+          <Header currentRoute='/lotofacil'/>
+          <div className={Styles.contentWrap}>
+            <LotoFacilLogo />
+            <LotteryInfo lotteryDate={state.nextLotteryDate} lotteryPrize={state.nextLotteryPrize} />
+            <LotteryResult
+              winners={state.winners}
+              drawnNumbers={state.drawnNumbers}
+              contestNumber={state.contestNumber}
+              contestDate={state.nextLotteryDateFull}
+            />
+          </div>
         </>
       )}
     </div>
