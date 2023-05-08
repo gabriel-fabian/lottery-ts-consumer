@@ -2,12 +2,12 @@ import Styles from './lotofacil-styles.scss'
 import LotoFacilLogo from './components/logo/logo'
 import LotteryInfo from './components/lottery-info/lottery-info'
 import LotteryResult from './components/lottery-result/lottery-result'
-import Loading from '../components/loading/loading'
+import Loading from '../../components/loading/loading'
 import { type LotoFacilApi } from '../../../infra/gateways/lotofacil-api'
 import { type LotteryResultModel } from '../../../domain/entities'
 
 import React, { useEffect, useState } from 'react'
-import Header from '../components/header/header'
+import Header from '../../components/header/header'
 
 type Props = {
   lotoFacilApi: LotoFacilApi
