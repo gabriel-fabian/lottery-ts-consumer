@@ -1,28 +1,29 @@
-import Styles from './megasena-styles.scss'
+import Styles from './timemania-styles.scss'
 import Loading from '../../components/loading/loading'
 import Header from '../../components/header/header'
-import { LotteryContext } from '../../../contexts/lottery-context'
-import { LotteryPrincipal } from '../../../presentation/components'
-import { type MegaSenaApi } from 'infra/gateways/megasena-api'
+import { LotteryPrincipal } from '../../components'
 import { type LotteryResultModel } from '../../../domain/entities'
+import { LotteryContext } from '../../../contexts/lottery-context'
+import { type TimemaniaApi } from 'infra'
 
 import React, { useEffect, useState } from 'react'
 
 type Props = {
-  megaSenaApi: MegaSenaApi
+  timemaniaApi: TimemaniaApi
 }
 
-const MegaSena: React.FC<Props> = ({ megaSenaApi }: Props) => {
+const Timemania: React.FC<Props> = ({ timemaniaApi }: Props) => {
   const [state, setState] = useState({} as LotteryResultModel)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    megaSenaApi.getLastResult()
-      .then(lotteryResult => {
+    timemaniaApi
+      .getLastResult()
+      .then((lotteryResult) => {
         setState(lotteryResult)
         setIsLoading(false)
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error)
       })
   }, [])
@@ -32,12 +33,12 @@ const MegaSena: React.FC<Props> = ({ megaSenaApi }: Props) => {
       {isLoading && <Loading />}
       {!isLoading && (
         <>
-          <Header currentRoute='/megasena'/>
+          <Header currentRoute='/timemania' />
           <div className={Styles.contentWrap}>
-          <LotteryContext.Provider
+            <LotteryContext.Provider
               value={{
-                lotteryName: 'mega-sena',
-                lotteryLogoSrc: '/trevo-megasena.png',
+                lotteryName: 'timemania',
+                lotteryLogoSrc: '/trevo-timemania.png',
                 lotteryResult: state
               }}
             >
@@ -50,4 +51,4 @@ const MegaSena: React.FC<Props> = ({ megaSenaApi }: Props) => {
   )
 }
 
-export default MegaSena
+export default Timemania

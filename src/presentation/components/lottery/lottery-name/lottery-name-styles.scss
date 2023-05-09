@@ -1,0 +1,11 @@
+@import "../../../styles/global.scss";
+
+.contentWrapper {
+  display: flex;
+}
+
+.lotteryName {
+  margin-left: 16px;
+  font-size: 32px;
+  font-weight: bold;
+}

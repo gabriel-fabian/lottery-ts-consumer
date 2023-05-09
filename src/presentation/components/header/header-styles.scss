@@ -1,3 +1,5 @@
+@import "../../styles/colors.scss";
+
 .headerWrap {
   display: flex;
   font-size: 24px;
@@ -5,19 +7,25 @@
   margin-bottom: 24px;
 
   .megasenaLink {
-    color: #209869;
+    color: $megasenaPrimary;
     margin-left: 16px;
     text-decoration: none;
   }
 
   .lotofacilLink {
-    color: #930089;
+    color: $lotofacilPrimary;
     margin-left: 16px;
     text-decoration: none;
   }
 
   .quinaLink {
-    color: #250181;
+    color: $quinaPrimary;
+    margin-left: 16px;
+    text-decoration: none;
+  }
+
+  .timemaniaLink {
+    color: $timemaniaPrimary;
     margin-left: 16px;
     text-decoration: none;
   }
