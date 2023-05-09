@@ -15,12 +15,12 @@ const Header: React.FC<Props> = ({ currentRoute }) => {
   return (
     <div className={Styles.headerWrap}>
       <NavLink
-        to='/lotofacil'
-        className={`${Styles.lotofacilLink} ${
-          isLinkDisabled('/lotofacil') ? Styles.disabledLink : ''
+        to='/timemania'
+        className={`${Styles.timemaniaLink} ${
+          isLinkDisabled('/timemania') ? Styles.disabledLink : ''
         }`}
       >
-        Lotofácil
+        Timemania
       </NavLink>
       <NavLink
         to='/megasena'

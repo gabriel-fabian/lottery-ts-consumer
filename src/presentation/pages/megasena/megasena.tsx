@@ -1,9 +1,8 @@
-import MegaSenaLogo from './components/logo/logo'
-import LotteryInfo from './components/lottery-info/lottery-info'
-import LotteryResult from './components/lottery-result/lottery-result'
 import Styles from './megasena-styles.scss'
 import Loading from '../../components/loading/loading'
 import Header from '../../components/header/header'
+import { LotteryContext } from '../../../contexts/lottery-context'
+import { LotteryPrincipal } from '../../../presentation/components'
 import { type MegaSenaApi } from 'infra/gateways/megasena-api'
 import { type LotteryResultModel } from '../../../domain/entities'
 
@@ -29,20 +28,21 @@ const MegaSena: React.FC<Props> = ({ megaSenaApi }: Props) => {
   }, [])
 
   return (
-    <div className={Styles.megaSenaWrap}>
+    <div>
       {isLoading && <Loading />}
       {!isLoading && (
         <>
           <Header currentRoute='/megasena'/>
           <div className={Styles.contentWrap}>
-            <MegaSenaLogo />
-            <LotteryInfo lotteryDate={state.nextLotteryDate} lotteryPrize={state.nextLotteryPrize} />
-            <LotteryResult
-              winners={state.winners}
-              drawnNumbers={state.drawnNumbers}
-              contestNumber={state.contestNumber}
-              contestDate={state.nextLotteryDateFull}
-            />
+          <LotteryContext.Provider
+              value={{
+                lotteryName: 'mega-sena',
+                lotteryLogoSrc: '/trevo-megasena.png',
+                lotteryResult: state
+              }}
+            >
+              <LotteryPrincipal/>
+            </LotteryContext.Provider>
           </div>
         </>
       )}

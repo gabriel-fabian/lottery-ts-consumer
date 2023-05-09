@@ -1,12 +1,7 @@
-.lotteryInfo {
-  margin-left: 16px;
-  max-width: 300px;
-}
+@import "../../../styles/global.scss";
 
-.lotteryName {
-  color: #250181;
-  font-size: 32px;
-  font-weight: bold;
+.contentWrap {
+  margin-left: 52px;
 }
 
 .lotteryNextDate {
@@ -16,7 +11,6 @@
 }
 
 .lotteryPrize {
-  color: #250181;
   font-size: 20px;
   font-weight: bold;
   margin-top: 25px;
